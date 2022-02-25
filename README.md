@@ -1,7 +1,5 @@
 ## vite-plugin-tencent-cos
 
----
-
 vite腾讯云COS上传
 
 ### Install

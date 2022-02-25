@@ -1,13 +1,12 @@
 {
   "name": "vite-plugin-tencent-cos",
-  "version": "1.0.0",
+  "keywords": ["vite", "tencent", "cos", "tencent-cos", "vite-plugin", "oss"],
+  "description": "vite-plugin-tencent-cos upload assets to tencent cos server",
+  "version": "1.0.1",
   "main": "index.js",
-  "repository": "git://github.com/liulunsheng/vite-plugin-tencent-cos.git",
+  "repository": "https://github.com/liulunsheng/vite-plugin-tencent-cos.git",
   "author": "liulunsheng",
   "license": "MIT",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "dependencies": {
     "chalk": "^5.0.0",
     "cos-nodejs-sdk-v5": "^2.11.6",

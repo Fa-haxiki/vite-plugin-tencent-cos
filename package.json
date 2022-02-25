@@ -2,9 +2,12 @@
   "name": "vite-plugin-tecent-cos",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/liulunsheng/vite-plugin-tecent-cos.git",
+  "repository": "git://github.com/liulunsheng/vite-plugin-tencent-cos.git",
   "author": "liulunsheng <619639650@qq.com>",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
     "chalk": "^5.0.0",
     "cos-nodejs-sdk-v5": "^2.11.6",

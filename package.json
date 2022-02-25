@@ -1,0 +1,15 @@
+{
+  "name": "vite-plugin-tecent-cos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/liulunsheng/vite-plugin-tecent-cos.git",
+  "author": "liulunsheng <619639650@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "cos-nodejs-sdk-v5": "^2.11.6",
+    "globby": "^13.1.1",
+    "ora": "^6.1.0",
+    "path": "^0.12.7"
+  }
+}

@@ -1,9 +1,9 @@
 {
-  "name": "vite-plugin-tecent-cos",
+  "name": "vite-plugin-tencent-cos",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git://github.com/liulunsheng/vite-plugin-tencent-cos.git",
-  "author": "liulunsheng <619639650@qq.com>",
+  "author": "liulunsheng",
   "license": "MIT",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

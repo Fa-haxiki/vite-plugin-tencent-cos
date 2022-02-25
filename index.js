@@ -1,11 +1,9 @@
-import ora from 'ora';
-import chalk from 'chalk';
-import globby from 'globby';
-import { resolve } from 'path';
-
+const colors  = require('colors')
+const glob = require('glob');
+const { resolve } = require('path');
 const COS = require('cos-nodejs-sdk-v5');
 
-export default function({
+module.exports =  function vitePluginTencentCos({
     region = 'ap-shanghai',
     secretKey = '',
     secretId = '',
@@ -14,7 +12,7 @@ export default function({
     remotePath = '/'
 } = {}) {
     return {
-        name: 'tc-cos-plugin',
+        name: 'vite-plugin-tencent-cos',
         async closeBundle() {
             if (!remotePath.startsWith('/') || !remotePath.endsWith('/')) {
                 console.error('remotePath必须以/开头,以/结尾');
@@ -23,27 +21,26 @@ export default function({
 
             path = resolve(process.cwd(), path);
 
-            const spinner = ora();
             const cos = new COS({
                 SecretKey: secretKey,
                 SecretId: secretId,
             });
 
-            const filePaths = await globby(path);
+            const filePaths = await glob.sync(path + '/**/*');
 
             for (const filePath of filePaths) {
                 const remoteFilePath = resolve(remotePath, filePath.replace(`${path}/`, ''));
-                spinner.info(chalk.yellow(`正在发布文件: ${remoteFilePath}`));
+                console.log(colors.yellow(`正在发布文件: ${remoteFilePath}`));
                 await cos.sliceUploadFile({
                     Bucket: bucket,
                     Region: region,
                     Key: remoteFilePath,
                     FilePath: filePath,
                 });
-                spinner.succeed(chalk.green(`成功发布文件: ${remoteFilePath}`));
+                console.log(colors.green(`成功发布文件: ${remoteFilePath}`));
             }
 
-            spinner.succeed(chalk.green('全部发布成功'));
+            console.log(colors.green('全部发布成功'));
         }
     }
 }
